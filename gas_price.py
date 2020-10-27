@@ -26,7 +26,7 @@ blocks_gwei = deque(maxlen=WINDOW)
 stats = {}
 
 
-@retry(Exception, delay=1, logger=log)
+@retry(Exception, delay=3, logger=log)
 def worker(skip_warmup):
     stats['health'] = False
     latest = w3.eth.filter('latest')
@@ -40,7 +40,7 @@ def worker(skip_warmup):
             log.info(str(stats))
         if not w3.eth.syncing:
             stats['health'] = True
-        sleep(1)
+        sleep(3)
 
 
 def warmup():

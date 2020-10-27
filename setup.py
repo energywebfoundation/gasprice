@@ -10,11 +10,11 @@ setup(
         'gas_price',
     ],
     install_requires=[
-        'sanic',
-        'pandas',
-        'web3>=4.0.0b4',
-        'click',
-        'retry',
+        'sanic==20.9.1',
+        'pandas==1.1.3',
+        'web3==5.12.3',
+        'click==7.1.2',
+        'retry==0.9.2',
     ],
     entry_points={
         'console_scripts': [
